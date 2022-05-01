@@ -194,4 +194,15 @@ We hit build now so it picks up default values with same failing, then leave and
 We are prompted with each of the param options we set,
 after building now, we check the output and its the options we selected for each of the params. 
 To check after a build is complete, as to which parameters were used, we go to Parameters. 
+
 ----
+Variables allow us to keep our code neat and we can store information we will use repeatedly. 
+We might set up one variable for repository url, and another for a docker image name, which is usally same name as application. 
+With variables we can create a template, so that we just need to swap out url or image name. 
+So for throughout the pipeline, for building, testing, pushing out, building image, all steps are taken care of. 
+
+Create a new pipeline "variablePipeline",
+in Pipeline script we paste in our Jenkins file from "Variables".
+We hit build now and check the output.
+----
+
