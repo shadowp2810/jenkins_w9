@@ -124,3 +124,22 @@ Challenge2
     Recreate the pipeline demo. 
 
 ----
+Fork the repository, 
+    https://github.com/jenkins-docs/simple-java-maven-app
+Modify the Jenkinsfile to remove the docker agent and commit changes .
+Copy the forked repository link.
+Create a new Jenkins pipeline, 
+For Pipeline, change defintion to "Pipeline script from SCM", with SCM "Git",
+and for script path we specify the location of Jenkinsfile which is "jenkins/Jenkinsfile".
+The first time we run build it will clone repo and build,
+in subsequent times it will chekout latest commits, and if there is a change it will use latest code. 
+
+----
+In Build Triggers,
+one use case for Build Periodically would be to build up and tear down cloud resources at specific times a day with a terraform script. 
+For Port SCM we can specify a schedule for often to check, and the most common interval in industry is 2min. 
+https://crontab.guru/#2_*_*_*_*
+where in script of schedule we write 2 * * * *,
+which is check every 2 min, every hour, every day(month), every month, every day(week).
+Saying H/2 * * * * , means run every 2min plus radom seconds between 1 and 60. 
+
