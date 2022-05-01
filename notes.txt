@@ -248,5 +248,6 @@ In our jenkinsfile, can delay any step and wait using sleep(<SECONDS>)
 This can be useful when running few jenkins pipelines simulataneously and watiting for cetain executions to happen before proceeding. 
 
 ----
+Any use of Groovy within Jenkinfile has to be within script{}
 
 
