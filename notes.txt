@@ -160,3 +160,12 @@ Create a new pipeline "boolPipeline",
 in Pipeline script we paste in our Jenkins file from "Params/boolean".
 We hit build now, then leave and come back and see the option build with params. 
 Now when we try to build it allows us to check it, checking it sets the value was true. 
+
+Create a new pipeline "stringPipeline",
+in Pipeline script we paste in our Jenkins file from "Params/input".
+We hit build now so it picks up default value, then leave and come back and see the option build with params. 
+We are promted with "Which environment to deploy in?", lets say "PROD",
+after building now, we check the output which is "PROD".
+To check after a build is complete, as to which parameters were used, we go to Parameters. 
+
+----
