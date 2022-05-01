@@ -99,4 +99,19 @@ Copy paste the Jenkins file into the script for "My Pipeline",
 and build now. 
 We can disable auto refresh so it doesnt refresh every 10sec. 
 
+You can see the build success and logs for each stage. 
+Console Output shows the entire log. 
+
+----
+One of the pains with Jenins is if the file is inside a repo. 
+To avoid the hassel of cloning the project,
+and attempting to correct the issue and and comitting the changes and trying the build again,
+and continuing the whole process until the build doesnt fail,
+we can go to build job, and click replay, 
+where we see the pipeline script, 
+, correct and try to rebuild from there, until we get it working,
+and then copy the working script. 
+As far as everyone else is concerned, we did it in a single commit. 
+In some organizations though this is disabled for security reasons. 
+
 ----
