@@ -1,0 +1,102 @@
+CI is for Dev and Test, CD is for prod.
+
+What is Jenkins? 
+    DevOps CICD tool
+    Automate builds and deployments 
+    Open source with over 1400 plugins
+
+Primary focus of this course is Declarative Pipelines.
+
+----
+In CI Continous Integration 
+Typically when code gets commited by a developer, 
+Jenkins will immidiately start a Build,
+after the Build process it will begin a Text process 
+
+In CD Continous Delivery 
+We might build a docker image, 
+push it to a repository,
+add a k8s file,
+and deploy it. 
+
+With jenkins we can automate the entire process.
+Jenkins can be used for many individual use cases,
+for cleanups, for deploying releases, standalone CI.
+
+----
+This will store the jenkins data in /your/home on the host. Ensure that /your/home is accessible by the jenkins user in container (jenkins user - uid 1000) or use -u some_other_user parameter with docker run.
+    $ docker run -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home jenkins
+Copy and store the key somewhere safe. 
+
+Install the suggested plugins.
+
+Multibranch Pipelines are extremely powerful. 
+
+----
+Challenge1
+    Setup Jenkins
+    Create Job Challenge1
+    Display "Hello from Challenge1"
+
+Create a new item of freestyle project. 
+In build specify execute shell
+    echo "Hello from Challenge1"
+
+----
+Maven is used to build a java file, 
+Usually Maven or Gradel are used to build java files, 
+
+https://github.com/jenkins-docs/simple-java-maven-app
+
+----
+
+Relog into Jenkins 
+User: admin
+Password: <FROM LOG OF INITIAL RUN OF JENKINS>
+
+We create a new Pipeline item called "My Pipeline"
+
+----
+Most popular Build Triggers are Poll SCM and Build Periodically. 
+If you had a cleanup job of building something in the morning 
+and tearing it down in the evening you would use Build Periodically.
+Poll SCM will watch the source code managment system like github,
+and if developer or anyone else makes a change,
+jenkins will pick up on the change and run a job. 
+Soon as a developer makes a change and commits to github, 
+job now runs, builds, tests. 
+
+----
+Useful links:
+Pipeline Syntax
+    https://www.jenkins.io/doc/book/pipeline/syntax/
+Pipeline Basic Steps
+    https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/
+
+----
+Copy the Jenkins container ID
+    $ docker container ls 
+We execute an interactive terminal as user root and run command /bin/bash
+    $ docker exec -it -u root <ID-NUMBER> /bin/bash
+$ apt-get update 
+$ apt-get install maven 
+
+
+----
+All Jenkinsfiles starts with "pipeline {}".
+"agent" specifies the node or slave to run on.
+Then stages block, "stages {}".
+A good practice is to add a cleanup job at beginning of script,
+"stage("Clean Up")", to remove remains from previous jobs. 
+We specify the steps in "stage("Clean Up")".
+"deleteDir()" clears the working folder. 
+
+Jenkins creates a folder usually job name with a random string of numbers.
+With each stage it revents back to the original folder.
+"dir()" is the equivalent of running cd. 
+
+Copy paste the Jenkins file into the script for "My Pipeline",
+and build now. 
+We can disable auto refresh so it doesnt refresh every 10sec. 
+
+----
