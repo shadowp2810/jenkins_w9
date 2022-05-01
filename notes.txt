@@ -253,5 +253,23 @@ Any use of Groovy within Jenkinfile has to be within script{}
 ----
 Functions in Jenkins goes outside the "pipeline{}"
 Scoping rules for defined variables applies same as any programming language. 
-Variables we want to use must be passed to the function where we call it. 
+Variables we want to use must be passed to the function where we call it.
 
+Any variable in environment block is scoped globally. 
+
+----
+When we have multiple lines for bash to execute, we can just use "sh """<COMMANDS>""""
+
+----
+We can build a job from a job. 
+We can have if statements in our jenkinsfile where we say if build was successful then deploy. 
+
+----
+A step in steps can be build 'boolPipeline' which is another jenkins item we created before. 
+
+----
+We can pass parameters while building a job from a job. 
+remoteJot/Jenkinfile
+https://www.jenkins.io/doc/pipeline/steps/pipeline-build-step/
+
+----
