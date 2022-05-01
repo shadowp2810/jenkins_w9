@@ -176,3 +176,22 @@ after building now, we check the output which is "PROD".
 To check after a build is complete, as to which parameters were used, we go to Parameters. 
 
 ----
+Jenkinfiles are based on Groovy which means we can use if statements and more. 
+
+----
+Challenge3
+    Create a pipeline called: Challenge3
+    Add 3 parameters
+        Get input from our custom deployment name. 
+        Select which AZ to deploy to: EU-WEST-2A, EU-WEST-2B, EU-WEST-2C
+        Checkbox to confirm deployment
+    Check if runs and works corrently. 
+
+
+Create a new pipeline "challenge3",
+in Pipeline script we paste in our Jenkins file from "Challenge3".
+We hit build now so it picks up default values with same failing, then leave and come back and see the option build with params. 
+We are prompted with each of the param options we set,
+after building now, we check the output and its the options we selected for each of the params. 
+To check after a build is complete, as to which parameters were used, we go to Parameters. 
+----
