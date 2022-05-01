@@ -115,3 +115,12 @@ As far as everyone else is concerned, we did it in a single commit.
 In some organizations though this is disabled for security reasons. 
 
 ----
+Challenge2
+    Create a pipeline called: Challenge2
+    Create a simple pipeline script with 5 stages
+        Each one numbered "Stage 1", "Stage 2", etc. 
+        A simple echo "This is stage X" for each stage.
+    Run it and check it works. 
+    Recreate the pipeline demo. 
+
+----
