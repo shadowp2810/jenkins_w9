@@ -168,4 +168,11 @@ We are promted with "Which environment to deploy in?", lets say "PROD",
 after building now, we check the output which is "PROD".
 To check after a build is complete, as to which parameters were used, we go to Parameters. 
 
+Create a new pipeline "choicePipeline",
+in Pipeline script we paste in our Jenkins file from "Params/choice".
+We hit build now so it picks up default value which is first item in array, then leave and come back and see the option build with params. 
+We are promted with "Which environment to deploy in?", and we have a dropdown of values to choose from, we can select "PROD"
+after building now, we check the output which is "PROD".
+To check after a build is complete, as to which parameters were used, we go to Parameters. 
+
 ----
