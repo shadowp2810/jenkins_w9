@@ -143,3 +143,20 @@ where in script of schedule we write 2 * * * *,
 which is check every 2 min, every hour, every day(month), every month, every day(week).
 Saying H/2 * * * * , means run every 2min plus radom seconds between 1 and 60. 
 
+----
+We create a new item "Multi Branch" as a Multibranch Pipeline with souce git,
+Jenkins will automatically look and discover new branches. 
+In build configuration we set the Jenkinsfile path. 
+We set Scan Multibranch Pipeline Triggers as 2 min. 
+After we save.
+We create a new branch called "newpipeline" 
+And soon jenkins will pickup new pipeline. 
+
+----
+Parameterized Pipelines allow us to get the input before job runs. 
+Checkboxes, user inputs, dropdowns. 
+
+Create a new pipeline "boolPipeline",
+in Pipeline script we paste in our Jenkins file from "Params/boolean".
+We hit build now, then leave and come back and see the option build with params. 
+Now when we try to build it allows us to check it, checking it sets the value was true. 
