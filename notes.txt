@@ -204,5 +204,13 @@ So for throughout the pipeline, for building, testing, pushing out, building ima
 Create a new pipeline "variablePipeline",
 in Pipeline script we paste in our Jenkins file from "Variables".
 We hit build now and check the output.
+
+We can fine Jenkins specific environment variables here
+https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#using-environment-variables
+BUILD_NUMBER env variable can function like tag number
+And everytime we build it auto increments. 
+BUILD_NUMBER is one of the more common ones we will use.
+
 ----
+
 
