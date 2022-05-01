@@ -212,5 +212,41 @@ And everytime we build it auto increments.
 BUILD_NUMBER is one of the more common ones we will use.
 
 ----
+Behind the scenes, Jenkins uses Groovy. 
+It allows us to create really complex pipelines with a lot of logic. 
+https://groovy-lang.org/syntax.html
+
+----
+The weather icons in Jenkins tells us the success or failure of builds. 
+What we want is sunshine. 
+Storms means lots of builds are failing. 
+Overtime the weather icons change. 
+It is a useful indication of whats happening with our builds. 
+
+----
+The most common reason for Jenins build failure is syntax errors in Jenkinfile. 
+
+----
+Handeling credentials 
+https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials
+
+One of the most common ways is actually different from setting the environment variables in jenkins. 
+In aws we can assign roles to the specific nodes that jenkins is running on. 
+That way we dont have to insert any credentials. 
+And it is infinetely more secure than the approach of setting the env vars within jenkins. 
+
+----
+Within VS code naming the file "prod.Jenkinsfile" would take away the color schemes that improve readability. 
+A workaround is remaning to "Jenkinsfile", fixing the issues and renaming back. 
+
+----
+We can have multiple Jenkinfiles within a project. 
+We can create new pipline items in Jenkins, like eg "test jenkinsfile" and point the source of jenkinsfile to eg "test.jenkinsfile"
+
+----
+In our jenkinsfile, can delay any step and wait using sleep(<SECONDS>)
+This can be useful when running few jenkins pipelines simulataneously and watiting for cetain executions to happen before proceeding. 
+
+----
 
 
